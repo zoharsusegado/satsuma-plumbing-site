@@ -64,7 +64,7 @@ img{height:auto;}
 .reveal{
   opacity:0;
   transform:translateY(18px);
-  transition:opacity .5s var(--ease), transform .5s var(--ease);
+  transition:opacity .4s var(--ease), transform .4s var(--ease);
 }
 .reveal.is-visible{
   opacity:1;
@@ -73,6 +73,19 @@ img{height:auto;}
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1;transform:none;transition:none;}
   html{scroll-behavior:auto;}
+}
+
+/* ---------- Subtle trust pulse ---------- */
+@keyframes trust-pulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.045);}
+}
+.pulse-stat{
+  display:inline-block;
+  animation:trust-pulse 3.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce){
+  .pulse-stat{animation:none;}
 }
 
 /* ---------- Buttons ---------- */
